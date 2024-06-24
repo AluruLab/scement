@@ -1,0 +1,16 @@
+{
+    "PHX_DATADIR": "/storage/home/hcoda1/0/spc/data2/",
+    "DATADIR": "/project/spc/",
+    "ADFILE": [
+        "pbmc_scrna/rna_chrom_conn1_5k_n07/pre_processed.h5ad",
+        "pbmc_scrna/rna_chrom_conn5_5k_n06/pre_processed.h5ad"
+    ],
+    "BATCH": [
+        "rna_chrom_conn1_5k_n07",
+        "rna_chrom_conn5_5k_n06"
+    ],
+    "batch_key": "batch",
+    "covariates": [],
+    "OUTDIR": "/project/spc/i3/eval/pbmc10x/scanorama_out/",
+    "OUTFILE": "combo_union2.h5ad"
+}
