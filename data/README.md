@@ -1,7 +1,8 @@
 Dataset Resource
 ----------------
 
-The datasets used for evaluation are available as zenodo resource [https://zenodo.org/doi/10.5281/zenodo.11521687](https://zenodo.org/doi/10.5281/zenodo.11521687).
+The datasets used for evaluation are available as zenodo resource [https://zenodo.org/doi/10.5281/zenodo.11521687](https://zenodo.org/doi/10.5281/zenodo.11521687). Download the datasets and unzip in this folder for evaluation.
+
 The dataset resource contains pre-processed A. thaliana root , the H. sapiens aortic valve datasets, 
 PBMC Covid atlas and public 10x datasetse used in the paper, 
 SCEMENT: Scalable and Memory Efficient Integration of Large-scale Single Cell RNA-sequencing Data. 
