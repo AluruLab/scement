@@ -30,6 +30,7 @@ dependencies = [
     "formulaic",
     "anndata",
     "scanpy",
+    "psutil",
 ]
 
 [project.optional-dependencies]

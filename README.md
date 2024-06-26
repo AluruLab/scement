@@ -14,12 +14,13 @@ C++ compiler with OpenMP support (tested with gcc 7.5).
 
 Depends on the following python libraries
 
+  - psutil
   - numpy
   - scipy
   - patsy
   - anndata
-  - formulaic
   - scanpy
+  - formulaic
 
 
 ## C/C++ Libraries
@@ -33,17 +34,19 @@ Other C/C++ libraries needs
    - LAPACKE
    - Armadillo
 
-The above libraries can be installed in Ubuntu/Debian with the command:
+The above libraries can be installed in Ubuntu/Debian with the following command:
 
-   sudo apt-get install cmake libopenblas-dev liblapack-dev libarpack2-dev libsuperlu-dev armadillo
+    sudo apt-get install cmake libopenblas-dev liblapack-dev libarpack2-dev libsuperlu-dev armadillo
 
-In Fedora/Red-hat the libraries are:  cmake, openblas-devel, lapack-devel, arpack-devel, SuperLU-devel and armadillo
+In Fedora/Red-hat the libraries are:  
+
+    cmake, openblas-devel, lapack-devel, arpack-devel, SuperLU-devel armadillo
 
 
 ## Installation
 
 The package can be installed from source using pip as follows:
 
-    pip install git+https://github.com/AluruLab/ParFastAAI.git
+    pip install git+https://github.com/AluruLab/scement.git
 
 
