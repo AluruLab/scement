@@ -6,8 +6,9 @@ options(future.globals.maxSize = 1e9)
 options(Seurat.object.assay.version = "v5")
 
 # patients data
-files_dir <- "/project/spc/i3/covid-scrnaseq/h5ad_full/"
-merged_dir <- "/project/spc/i3/covid-scrnaseq/merged_object/"
+files_dir <- "../../data/covid_atlas/"
+merged_dir <- "../../data/covid_atlas/"
+meta_data_csv_file <- "../../data/covid_atlas/covid_metadata.csv"
 cat("Merges data from samples of h5ad_full data", "\n")
 cat("IN : ", files_dir, "OUT : ", merged_dir,  "\n")
 
@@ -65,7 +66,7 @@ file_set <- patients_500k
 merged_file <- "patients_500k.rds"
 file_set <- patients_full
 merged_file <- "patients_full.rds"
-patient_metadata <- read.csv("./covid_metadata.csv", header = TRUE,
+patient_metadata <- read.csv(meta_data_csv_file, header = TRUE,
                              row.names = 1)
 cell_metadata <- read.csv("./cell_annotation.csv", header = TRUE,
                           row.names = 1)

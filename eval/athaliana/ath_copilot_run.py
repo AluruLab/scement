@@ -7,8 +7,8 @@ import anndata as an
 import scanpy as sc
 import scanorama as scanr
 
-DATA_DIR = "./ath_integ/"
-OUTPUT_DIR = "./athaliana/"
+DATA_DIR = "../../data/athaliana/"
+OUTPUT_DIR = "./athaliana_out/"
 
 
 def filter_scale(adata):

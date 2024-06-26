@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-DATA_DIR = "/project/spc/i3/covid-scrnaseq/"
+DATA_DIR = "../../data/"
 COVID_METADATA_XLSX = DATA_DIR + "/meta/covid_metadata.xlsx"
 
 
@@ -27,7 +27,7 @@ def threshold_stats(qcx):
 
 
 def select_diseased_from(dfx, qcx, ndis, from_set):
-    #disease_patients = list(dfx[dfx["SARS-CoV-2"] == "positive"].index)
+    # disease_patients = list(dfx[dfx["SARS-CoV-2"] == "positive"].index)
     disease_patients = from_set
     disx = np.random.choice(range(len(disease_patients)), ndis, replace=False)
     disx = [disease_patients[x] for x in disx]

@@ -8,8 +8,8 @@ from pathlib import PurePath
 
 # Generate analyses with Scanorama
 # source data is from DATA_DIR, and output is ANALYSIS_RESULTS_DIR
-DATA_DIR = "./aortic_valve/"
-ANALYSIS_RESULTS_DIR = "./avalve/"
+DATA_DIR = "../../data/aortic_valve/"
+ANALYSIS_RESULTS_DIR = "./avalve_out/"
 
 
 def filter_scale(adata):

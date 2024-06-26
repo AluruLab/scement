@@ -10,9 +10,9 @@ library(zellkonverter)
 library(SeuratDisk)
 source("./patch_seuratdisk.R")
 
-DATA_DIR <- "./ath_integ/"
-PROTPLAST_GENE_LIST <-  "./Protoplasting_DEgene_FC2_list.txt"
-ANAYSIS_OUT_DIR <- "./athaliana/"
+DATA_DIR <- "../../data/athaliana/"
+PROTPLAST_GENE_LIST <-  "../../data/meta/Protoplasting_DEgene_FC2_list.txt"
+ANAYSIS_OUT_DIR <- "./athaliana_out/"
 
 transpose_dgRMatrix <- function(inmat) {
     if (class(inmat) != "dgRMatrix")

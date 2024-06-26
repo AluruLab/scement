@@ -5,7 +5,7 @@ import pathlib
 # Assuming the analyses results are available in ANALYSIS_RESULTS_DIR
 # Generate UMAP plots in PLOTS_OUT_DIR
 ANALYSIS_RESULTS_DIR = "./avalve/"
-PLOTS_OUT_DIR = "./avalve/"
+PLOTS_OUT_DIR = "./avalve_out/"
 COMBAT_RESULTS_FILE = "combat_avalve"
 COMBAT_UMAP_FILE = "combat_avalve_renamed.png"
 SCANORMA_RESULTS_FILE = "scanorama_avalve"

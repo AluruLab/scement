@@ -2,7 +2,7 @@
 rargs <- commandArgs()
 args <- commandArgs(trailingOnly = TRUE)
 rctypes <- c("50K", "350K", "500K", "700K", "full")
-seurat_objdir <- "/project/spc/i3/covid-scrnaseq/h5ad_full/"
+seurat_objdir <- "../../data/covid_atlas/"
 out_dir <- "fastmnn_out/"
 if (length(args) == 0) {
   cat("Run FastMNN for COVID data.", "\n")

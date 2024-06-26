@@ -1,0 +1,15 @@
+{
+    "DATADIR": "../../data/pbmc10x",
+    "OUTDIR": "../../data/pbmc10x",
+    "ADFILE": [
+        "rna_chrom_conn1_5k_n07/pre_processed.h5ad",
+        "rna_chrom_conn5_5k_n06/pre_processed.h5ad"
+    ],
+    "BATCH": [
+        "rna_chrom_conn1_5k_n07",
+        "rna_chrom_conn5_5k_n06"
+    ],
+    "batch_key": "batch",
+    "covariates": [],
+    "OUTFILE": "combo_union2.h5ad"
+}

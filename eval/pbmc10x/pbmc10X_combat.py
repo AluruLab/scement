@@ -9,6 +9,8 @@ import argparse
 import json
 import scement as sct
 
+GENE_MAPPING_CSV = "../../data/meta/gene_mapping.csv"
+
 
 def combat_and_plot(axcat, axcat_plot_file, axcat_file,
                     ntopg=5000, scement=True,
@@ -21,7 +23,7 @@ def combat_and_plot(axcat, axcat_plot_file, axcat_file,
     if (axcat is not None) and (filter_pct > 0.0):
         tic = time.perf_counter()
         pre_batches = set(axcat.obs[batch_key])
-        celldx, genedx = sc.pp.calculate_qc_metrics(axcat)
+        celldx, genedx = sc.pp.calculate_qc_metrics(axcat)  # type:ignore
         npct = filter_pct
         ngenes = genedx.shape[0]
         nzcells_flag = celldx.n_genes_by_counts > int(ngenes * npct)
@@ -81,7 +83,7 @@ def combat_and_plot(axcat, axcat_plot_file, axcat_file,
 
 
 def update_obs_var(adx,
-                   gm_file="/project/spc/i3/eval/covid_atlas/meta/gene_mapping.csv"):
+                   gm_file=GENE_MAPPING_CSV):
     new_obs = adx.obs
     new_obs['pid'] = new_obs['batch']
     adx.obs = new_obs

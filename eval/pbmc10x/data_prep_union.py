@@ -104,6 +104,7 @@ if __name__ == "__main__":
     help_str = """Path to input json file, File expected to have following format:
 {
    "DATADIR": "/storage/home/hcoda1/0/spc/data2/",
+  "OUTDIR" : "/storage/home/hcoda1/0/spc/data2/scr_data/rna_combo/",
    "ADFILE" : [
        "scr_data/rna_3p_chrx_10k_n02/pre_processed.h5ad",
        "scr_data/rna_3p_chrx_ht_20K_n03/pre_processed.h5ad",
@@ -126,7 +127,6 @@ if __name__ == "__main__":
        "rna_chromv2_v2chem_1k_n09", "rna_chromv2_v3chem_1k_n10",
        "rna_cv1_68K_n11", "rna_cv1_donora_n12", "rna_cv1_donorb_n13",
        "rna_cv1_donorc_n14", "rna_tgt_10k_n05", "rna_pbmc_600k" ],
-  "OUTDIR" : "/storage/home/hcoda1/0/spc/data2/scr_data/rna_combo/",
   "OUTFILE" : "combo_joint_matrix.h5ad"
 }
             """

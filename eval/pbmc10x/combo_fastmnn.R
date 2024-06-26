@@ -12,44 +12,44 @@ cat("Running with args : ", args, "\n")
 ndata <- as.integer(args[1])
 cat("Setting No. of datasets : ", ndata, "\n")
 out_dir <- "fastmnn_out"
+seurat_objdir <- "../../data/FastIntegrate/Seurat_Objects/"
 
 if (ndata == 2) {
-  use_sample <- c("n06", "n07")
+    use_sample <- c("n06", "n07")
 }
 
 if (ndata == 3) {
-  use_sample <- c("n02", "n06", "n07")
+    use_sample <- c("n02", "n06", "n07")
 }
 
 if (ndata == 5) {
-  use_sample <- c("n01", "n02", "n06", "n07", "n08")
+    use_sample <- c("n01", "n02", "n06", "n07", "n08")
 }
 
 if (ndata == 9) {
-  use_sample <- c("n01", "n02", "n06", "n07", "n08", "n03", "n05", "n13", "n14")
+    use_sample <- c("n01", "n02", "n06", "n07", "n08", "n03", "n05", "n13", "n14")
 }
 
 if (ndata == 13) {
-  use_sample <- c("n01", "n02", "n06", "n07", "n08", "n03", "n05", "n09", "n10",
-                  "n11", "n12", "n13", "n14")
+    use_sample <- c("n01", "n02", "n06", "n07", "n08", "n03", "n05", "n09", "n10",
+                    "n11", "n12", "n13", "n14")
 }
 
 if (ndata == 16) {
-  use_sample <- c("n01", "n02", "n06", "n07", "n08", "n03", "n05", "n09", "n10",
-                  "n11", "n12", "n13", "n14", "n70", "n71", "n74")
+    use_sample <- c("n01", "n02", "n06", "n07", "n08", "n03", "n05", "n09", "n10",
+                    "n11", "n12", "n13", "n14", "n70", "n71", "n74")
 }
 
 if (ndata == 17) {
-  use_sample <- c("n01", "n02", "n06", "n07", "n08", "n03", "n05", "n09", "n10",
-                  "n11", "n12", "n13", "n14", "n70", "n71", "n74", "n15")
+    use_sample <- c("n01", "n02", "n06", "n07", "n08", "n03", "n05", "n09", "n10",
+                    "n11", "n12", "n13", "n14", "n70", "n71", "n74", "n15")
 }
 
 
 read_seu <- function(rds_file) {
-  as.SingleCellExperiment(readRDS(rds_file))
+    as.SingleCellExperiment(readRDS(rds_file))
 }
 
-seurat_objdir <- "/project/maluru3/FastIntegrate/Seurat_Objects/"
 
 list_filenames <- list.files(path = seurat_objdir,
                              pattern = ".rds$") %>%
@@ -57,30 +57,30 @@ list_filenames <- list.files(path = seurat_objdir,
 cat("Input Files: ", length(list_filenames), "\n")
 rna_list <- list()
 for (i in seq_len(length(list_filenames))) {
-  cat("Loading Dataset", i, list_filenames[i], "\n")
-  rna_list[[i]] <- read_seu(rds_file = paste0(seurat_objdir, list_filenames[i]))
+    cat("Loading Dataset", i, list_filenames[i], "\n")
+    rna_list[[i]] <- read_seu(rds_file = paste0(seurat_objdir, list_filenames[i]))
 }
 names(rna_list) <- use_sample
 
 start_time <- Sys.time()
 for (i in seq_along(rna_list)) {
-  sce_obj <- rna_list[[i]]
-  sce_feat <- rownames(sce_obj)
-  #sce_obj <- sce_obj[-sort(match(pp_genes, cpt_rc_features)), ]
-  #mito_features <- c(grep("ATMG", sce_feat), grep("ATCG", cpt_rc_features))
-  #mito_features <- c(grep("ATMG", sce_feat), grep("ATCG", cpt_rc_features))
-  mito_features <- grep("mt-", sce_feat)
-  sce_obj <- addPerCellQC(sce_obj, subsets = list(Mito = mito_features))
-  sce_qc <- quickPerCellQC(colData(sce_obj),
-                           sub.fields = "subsets_Mito_percent")
-  sce_obj <- sce_obj[, !sce_qc$discard]
-  rna_list[[i]] <- logNormCounts(sce_obj)
+    sce_obj <- rna_list[[i]]
+    sce_feat <- rownames(sce_obj)
+    #sce_obj <- sce_obj[-sort(match(pp_genes, cpt_rc_features)), ]
+    #mito_features <- c(grep("ATMG", sce_feat), grep("ATCG", cpt_rc_features))
+    #mito_features <- c(grep("ATMG", sce_feat), grep("ATCG", cpt_rc_features))
+    mito_features <- grep("mt-", sce_feat)
+    sce_obj <- addPerCellQC(sce_obj, subsets = list(Mito = mito_features))
+    sce_qc <- quickPerCellQC(colData(sce_obj),
+                             sub.fields = "subsets_Mito_percent")
+    sce_obj <- sce_obj[, !sce_qc$discard]
+    rna_list[[i]] <- logNormCounts(sce_obj)
 }
 common_genes <- Reduce(intersect, lapply(rna_list, rownames))
 
 for (i in seq_along(rna_list)) {
-  sce_obj <- rna_list[[i]]
-  rna_list[[i]] <- sce_obj[common_genes, ]
+    sce_obj <- rna_list[[i]]
+    rna_list[[i]] <- sce_obj[common_genes, ]
 }
 print("Constructed Objects.")
 end_time <- Sys.time()
@@ -91,7 +91,7 @@ start_time <- Sys.time()
 mbat_out <- do.call(multiBatchNorm, rna_list)
 cat("Completed MultiBatch : ", length(mbat_out), "\n")
 model_gene_vars <- lapply(mbat_out, function(sce_obj) {
-  modelGeneVar(sce_obj)
+    modelGeneVar(sce_obj)
 })
 combined_gene_vars <- do.call(combineVar, model_gene_vars)
 chosen_hvgs <- getTopHVGs(combined_gene_vars, n = 25000)

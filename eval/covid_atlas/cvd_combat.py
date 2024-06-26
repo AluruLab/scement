@@ -8,6 +8,10 @@ import pathlib
 import argparse
 
 
+COVID_INPUT_DIR = "../../data/covid_atlas/"
+COVID_OUTPUT_DIR = "./combat_out"
+
+
 def load_metadata(nmin=1000):
     dfx = pd.read_excel("meta/covid_metadata.xlsx",  # type: ignore
                         index_col="sampleID")   # type: ignore
@@ -262,8 +266,8 @@ def main(hd_dir, cxtype, gxtype, ngenes, output_dir=".",
 
 if __name__ == "__main__":
     rctypes = ["50K", "320K", "500K", "full"]
-    hd_dir = "./h5ad_full/"
-    out_dir = "./"
+    hd_dir = COVID_INPUT_DIR
+    out_dir = COVID_OUTPUT_DIR
     ngenes = {"500": 500, "1K": 1000, "5K": 5000, "10K": 10000, "full": None}
     rgtypes = list(ngenes.keys())
     parser = argparse.ArgumentParser(prog="CVD",

@@ -7,8 +7,8 @@ import scanpy as sc
 import scanorama as scanr
 from pathlib import PurePath
 
-DATA_DIR = "./ath_integ/"
-ANALYSIS_OUT_DIR = "./athaliana/"
+DATA_DIR = "../../data/athaliana/"
+ANALYSIS_OUT_DIR = "./athaliana_out/"
 
 
 def filter_scale(adata):

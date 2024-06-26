@@ -3,7 +3,7 @@ rargs <- commandArgs()
 args <- commandArgs(trailingOnly = TRUE)
 rctypes <- c("50K", "350K", "500K", "700K", "full")
 out_dir <- "fastinteg_out/"
-seurat_objdir <- "/project/spc/i3/covid-scrnaseq/h5ad_full/"
+seurat_objdir <- "../../data/covid_atlas/"
 if (length(args) < 2) {
   cat("Run FastIntegration for COVID data.", "\n")
   cat("Usage ", rargs, " < NCELLS > < NCORES >", "\n")

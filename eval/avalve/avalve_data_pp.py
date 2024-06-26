@@ -4,8 +4,8 @@ from pathlib import PurePath
 
 # Generates the h5ad files from the input matrices
 #
-INPUT_DATA_DIR = "./aortic_valve"
-OUTPUT_DATA_DIR = "./aortic_valve/"
+INPUT_DATA_DIR = "../../data/aortic_valve/"
+OUTPUT_DATA_DIR = "../../data/aortic_valve_out/"
 
 
 def prep_dataset(data_dir, matrix_dir, meta_file,

@@ -10,6 +10,9 @@ import pathlib
 import scipy
 from pathlib import PurePath
 
+COVID_INPUT_DIR = "../../data/covid_atlas/"
+COVID_OUTPUT_DIR = "./scanorama_out"
+
 
 NGENES_MAP = {"500": 500, "1K": 1000, "5K": 5000, "10K": 10000, "full": None}
 PATIENT_LIST = {
@@ -345,8 +348,8 @@ def main(in_args):
 if __name__ == "__main__":
     rctypes = ["10K", "25K", "50K", "150K", "350K", "500K", "700K", "full"]
     rgtypes = list(NGENES_MAP.keys())
-    default_in_dir = "./h5ad_full/"
-    default_out_dir = "./scanorama_out/"
+    default_in_dir = COVID_INPUT_DIR
+    default_out_dir = COVID_OUTPUT_DIR
     parser = argparse.ArgumentParser(description='Integrate w. combat.')
     parser.add_argument("cxtype", choices=rctypes)
     parser.add_argument("gxtype", choices=rgtypes)

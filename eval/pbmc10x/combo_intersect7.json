@@ -1,0 +1,43 @@
+{
+    "DATADIR": "../../data/pbmc10x",
+    "OUTDIR": "../../data/pbmc10x",
+    "ADFILE": [
+        "rna_3p_chrx_10k_n02/pre_processed.h5ad",
+        "rna_3p_chrx_ht_20K_n03/pre_processed.h5ad",
+        "rna_3p_ctrlr_10k_n01/pre_processed.h5ad",
+        "rna_chrom_conn1_5k_n07/pre_processed.h5ad",
+        "rna_chrom_conn5_5k_n06/pre_processed.h5ad",
+        "rna_chromv2_10k_n08/pre_processed.h5ad",
+        "rna_chromv2_v2chem_1k_n09/pre_processed.h5ad",
+        "rna_chromv2_v3chem_1k_n10/pre_processed.h5ad",
+        "rna_cv1_68K_n11/pre_processed.h5ad",
+        "rna_cv1_donora_n12/pre_processed.h5ad",
+        "rna_cv1_donorb_n13/pre_processed.h5ad",
+        "rna_cv1_donorc_n14/pre_processed.h5ad",
+        "rna_tgt_10k_n05/pre_processed.h5ad",
+        "GSM4560070/pre_processed.h5ad",
+        "GSM4560071/pre_processed.h5ad",
+        "GSM4560074/pre_processed.h5ad"
+    ],
+    "BATCH": [
+        "rna_3p_chrx_10k_n02",
+        "rna_3p_chrx_ht_20K_n03",
+        "rna_3p_ctrlr_10k_n01",
+        "rna_chrom_conn1_5k_n07",
+        "rna_chrom_conn5_5k_n06",
+        "rna_chromv2_10k_n08",
+        "rna_chromv2_v2chem_1k_n09",
+        "rna_chromv2_v3chem_1k_n10",
+        "rna_cv1_68K_n11",
+        "rna_cv1_donora_n12",
+        "rna_cv1_donorb_n13",
+        "rna_cv1_donorc_n14",
+        "rna_tgt_10k_n05",
+        "GSM4560070",
+        "GSM4560071",
+        "GSM4560074"
+    ],
+    "batch_key": "batch",
+    "covariates": [],
+    "OUTFILE": "combo_intersect7.h5ad"
+}

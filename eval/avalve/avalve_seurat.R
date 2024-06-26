@@ -6,8 +6,8 @@ library(tictoc)
 
 # Generate analyses with COMBAT
 # source data is from DATA_DIR, and output is ANALYSIS_RESULTS_DIR
-DATA_DIR <- "./aortic_valve/"
-ANALYSIS_RESULTS_DIR <- "./avalve/"
+DATA_DIR <- "../../data/aortic_valve"
+ANALYSIS_RESULTS_DIR <- "./avalve_out/"
 
 transpose_dgRMatrix <- function(inmat) {
     if (class(inmat) != "dgRMatrix") {

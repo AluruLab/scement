@@ -11,15 +11,17 @@ import argparse
 import select_data as sd
 import scement as sct
 
-DATA_DIR = "/project/spc/i3/covid-scrnaseq/"
+DATA_DIR = "../../data/"
+COVID_DATA_DIR = "../../data/covid_atlas/"
+PBMC10X_DATA_DIR = "../../data/pbmc10x"
 COVID_METADATA_XLSX = DATA_DIR + "/meta/covid_metadata.xlsx"
 COVID_ANNOTATION_CSV = DATA_DIR + "/meta/cell_annotation.csv.gz"
 GENE_MAPPING_10X_CSV = DATA_DIR + "/meta/gene_mapping.csv"
-COMBO_10X_H5AD = DATA_DIR + "/data/combo_intersect.h5ad"
-COMBO4_10X_H5AD = DATA_DIR + "/data/combo_intersect4.h5ad"
-COMBO4_10X_META_CSV = DATA_DIR + "/data/combo_intersect4_mdata.csv"
-COMBO7_10X_H5AD = DATA_DIR + "/data/combo_intersect7.h5ad"
-COMBO7_10X_META_CSV = DATA_DIR + "/data/combo_intersect7_mdata.csv"
+COMBO_10X_H5AD = PBMC10X_DATA_DIR + "/combo_intersect.h5ad"
+COMBO4_10X_H5AD = PBMC10X_DATA_DIR + "/combo_intersect4.h5ad"
+COMBO4_10X_META_CSV = PBMC10X_DATA_DIR + "/combo_intersect4_mdata.csv"
+COMBO7_10X_H5AD = PBMC10X_DATA_DIR + "/combo_intersect7.h5ad"
+COMBO7_10X_META_CSV = PBMC10X_DATA_DIR + "/combo_intersect7_mdata.csv"
 
 
 def load_covid_metadata(cvd_meta_file=COVID_METADATA_XLSX,

@@ -1,0 +1,29 @@
+{
+    "DATADIR": "../../data/pbmc10x",
+    "OUTDIR": "../../data/pbmc10x",
+    "RADFILE": "rna_3p_chrx_10k/pre_processed.h5ad",
+    "RBATCH": [
+        "rna_3p_chrx_10k"
+    ],
+    "ADFILE": "combo_union.h5ad",
+    "BATCH": [
+        "rna_3p_chrx_10k_n02",
+        "rna_3p_chrx_ht_20K_n03",
+        "rna_3p_ctrlr_10k_n01",
+        "rna_chrom_conn1_5k_n07",
+        "rna_chrom_conn5_5k_n06",
+        "rna_chromv2_10k_n08",
+        "rna_chromv2_v2chem_1k_n09",
+        "rna_chromv2_v3chem_1k_n10",
+        "rna_cv1_68K_n11",
+        "rna_cv1_donora_n12",
+        "rna_cv1_donorb_n13",
+        "rna_cv1_donorc_n14",
+        "rna_tgt_10k_n05",
+        "rna_pbmc_600k",
+        "GSM4560070",
+        "GSM4560071",
+        "GSM4560074"
+    ],
+    "OUTFILE": "combat_union.h5ad"
+}

@@ -11,6 +11,9 @@ library(SeuratDisk)
 #library(tictoc)
 source("./patch_seuratdisk.R")
 
+DATA_DIR <- "../../data/aortic_valve"
+ANALYSIS_RESULTS_DIR <- "./avalve_out/"
+
 transpose_dgRMatrix <- function(inmat) {
     if (class(inmat) != "dgRMatrix")
         stop("inmat is not of class dgRMatrix")
@@ -109,5 +112,5 @@ options(echo = TRUE) # if you want see commands in output file
 args <- commandArgs(trailingOnly = TRUE)
 print(args)
 if(args[1] == "avalve") {
-  run_fastmnn_avalve_dset_integration("./aortic_valve/", "./avalve2/")
+  run_fastmnn_avalve_dset_integration(DATA_DIR, ANALYSIS_RESULTS_DIR)
 }
