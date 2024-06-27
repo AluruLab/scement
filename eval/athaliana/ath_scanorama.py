@@ -252,7 +252,7 @@ if __name__ == "__main__":
                    "jb_gala_flt2", "default"]
     run_option = "/".join(run_choices)
     if len(sys.argv) <= 1:
-        print("Usage : " + sys.argv[0] + "  " + run_option)
+        main("default")
     else:
         rtype = sys.argv[1]
         main(rtype)

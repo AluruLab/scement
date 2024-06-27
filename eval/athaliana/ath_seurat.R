@@ -537,24 +537,29 @@ run_wildtype <- function(data_dir, proto_file, out_dir) {
 options(echo = TRUE) # if you want see commands in output file
 args <- commandArgs(trailingOnly = TRUE)
 print(args)
-if (args[1] == "wt") {
-    run_wildtype(DATA_DIR, PROTPLAST_GENE_LIST, ANAYSIS_OUT_DIR)
-}
-if (args[1] == "copilot") {
-    run_copilot_dset(DATA_DIR, PROTPLAST_GENE_LIST, ANAYSIS_OUT_DIR)
-}
-if (args[1] == "gala") {
-    run_gala_dset(DATA_DIR, PROTPLAST_GENE_LIST, ANAYSIS_OUT_DIR)
-}
-if (args[1] == "jb_gala") {
-    run_jb_gala_dset(DATA_DIR, PROTPLAST_GENE_LIST, ANAYSIS_OUT_DIR)
-}
-if (args[1] == "jb_gala_flt1") {
-    run_jb_gala_flt1_dset(DATA_DIR, PROTPLAST_GENE_LIST, ANAYSIS_OUT_DIR)
-}
-if (args[1] == "jb_gala_flt2") {
+if (length(args) == 0){
+    cat("Running default \n")
     run_jb_gala_flt2_dset(DATA_DIR, PROTPLAST_GENE_LIST, ANAYSIS_OUT_DIR)
-}
-if (args[1] == "default") {
-    run_jb_gala_flt2_dset(DATA_DIR, PROTPLAST_GENE_LIST, ANAYSIS_OUT_DIR)
+} else {
+    if (args[1] == "wt") {
+        run_wildtype(DATA_DIR, PROTPLAST_GENE_LIST, ANAYSIS_OUT_DIR)
+    }
+    if (args[1] == "copilot") {
+        run_copilot_dset(DATA_DIR, PROTPLAST_GENE_LIST, ANAYSIS_OUT_DIR)
+    }
+    if (args[1] == "gala") {
+        run_gala_dset(DATA_DIR, PROTPLAST_GENE_LIST, ANAYSIS_OUT_DIR)
+    }
+    if (args[1] == "jb_gala") {
+        run_jb_gala_dset(DATA_DIR, PROTPLAST_GENE_LIST, ANAYSIS_OUT_DIR)
+    }
+    if (args[1] == "jb_gala_flt1") {
+        run_jb_gala_flt1_dset(DATA_DIR, PROTPLAST_GENE_LIST, ANAYSIS_OUT_DIR)
+    }
+    if (args[1] == "jb_gala_flt2") {
+        run_jb_gala_flt2_dset(DATA_DIR, PROTPLAST_GENE_LIST, ANAYSIS_OUT_DIR)
+    }
+    if (args[1] == "default") {
+        run_jb_gala_flt2_dset(DATA_DIR, PROTPLAST_GENE_LIST, ANAYSIS_OUT_DIR)
+    }
 }

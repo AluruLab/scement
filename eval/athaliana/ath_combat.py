@@ -347,7 +347,7 @@ def main(rtype):
 if __name__ == "__main__":
     rtypes = ["2ds", "4ds", "col0", "copilot", "jb_gala", "gala", "default"]
     if len(sys.argv) <= 1:
-        print("Usage: " + sys.argv[0] + " run_name [" + "/".join(rtypes) + "]")
+        main("default")
     else:
         rtype = sys.argv[1]
         main(rtype)
