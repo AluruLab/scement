@@ -2,10 +2,11 @@ import scanpy as sc
 import pandas as pd
 from pathlib import PurePath
 
+# Pre-processing script
 # Generates the h5ad files from the input matrices
 #
 INPUT_DATA_DIR = "../../data/aortic_valve/"
-OUTPUT_DATA_DIR = "../../data/aortic_valve_out/"
+OUTPUT_DATA_DIR = "../../data/aortic_valve/"
 
 
 def prep_dataset(data_dir, matrix_dir, meta_file,

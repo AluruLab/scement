@@ -11,6 +11,8 @@ library(SeuratDisk)
 #library(tictoc)
 source("./patch_seuratdisk.R")
 
+# Generate analyses with fastmnn
+# source data is from DATA_DIR, and output is ANALYSIS_RESULTS_DIR
 DATA_DIR <- "../../data/aortic_valve"
 ANALYSIS_RESULTS_DIR <- "./avalve_out/"
 

@@ -2,14 +2,15 @@ import scanpy as sc
 import anndata as an
 import pathlib
 
+# Script to Generate Plots
 # Assuming the analyses results are available in ANALYSIS_RESULTS_DIR
 # Generate UMAP plots in PLOTS_OUT_DIR
-ANALYSIS_RESULTS_DIR = "./avalve/"
+ANALYSIS_RESULTS_DIR = "./avalve_out/"
 PLOTS_OUT_DIR = "./avalve_out/"
 COMBAT_RESULTS_FILE = "combat_avalve"
-COMBAT_UMAP_FILE = "combat_avalve_renamed.png"
+COMBAT_UMAP_FILE = "combat_avalve_umap.png"
 SCANORMA_RESULTS_FILE = "scanorama_avalve"
-SCANORMA_UMAP_FILE = "scanorama_avalve_renamed.png"
+SCANORMA_UMAP_FILE = "scanorama_avalve_umap.png"
 
 
 def main():

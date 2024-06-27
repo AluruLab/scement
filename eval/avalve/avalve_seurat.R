@@ -4,7 +4,7 @@ library(Seurat)
 library(SeuratDisk)
 library(tictoc)
 
-# Generate analyses with COMBAT
+# Generate analyses with Seurat
 # source data is from DATA_DIR, and output is ANALYSIS_RESULTS_DIR
 DATA_DIR <- "../../data/aortic_valve"
 ANALYSIS_RESULTS_DIR <- "./avalve_out/"
